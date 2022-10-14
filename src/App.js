@@ -1,18 +1,32 @@
 import React from 'react';
 
+const todoList = [{
+  id: 1,
+  title: "Complete assignment"
+},
+{
+  id: 3,
+  title: "Meditate"
+},
+{
+  id: 4,
+  title: "Meal Plan"
+},
+];
+
 function App() {
+  const listItems = todoList.map(function(item) {
+    return <li key = {item.id}>{item.title}</li>
+  })
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div >
       <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
+       <h1>Todo List</h1>
       </header>
+      <ul>{listItems}</ul>
     </div>
   );
+  
 }
 
 export default App;
