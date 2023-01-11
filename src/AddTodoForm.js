@@ -13,7 +13,11 @@ setTodoTitle(newTodoTitle);
 
     const handleAddTodo = (event) => {
        event.preventDefault();
-          onAddTodo({ title: todoTitle, id: Date.now() });
+          onAddTodo({ 
+              createdTime: Date.now(),
+              fields: { Title: todoTitle },
+              id: Date.now(),
+                });
           setTodoTitle("");
     };
    
