@@ -44,12 +44,37 @@ useEffect(() => {
 setTodoList(remove)
   }
   const addTodo = (newTodo) => {
+    addItem(newTodo);
 setTodoList([...todoList, newTodo]);
   }
+  const addItem = (todoItem) => {
+    const body = {
+      records: [
+        {
+          fields: {
+            Title: todoItem.fields.Title,
+          },
+        },
+      ],
+    };
+  
+ fetch(
+    `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`, 
+    {
+      methods: "POST", 
+      body: JSON.stringify(body),
+      headers: {
+        authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+    }
+
+  ).then((r) => r.json());
+}
       return (
        <BrowserRouter>
            <Routes>
-       <Route path="/" element={
+       <Route exact path="/" element={
         <div><h1>Todo List</h1></div>
        } />
        
