@@ -1,0 +1,30 @@
+.ListItem {
+    color: grey;
+    padding-top: 26px;
+    
+}
+
+.Space {
+    margin-left: 6px;
+  }
+  
+  .Button {
+    background: var(--branding-color);
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 5px 15px;
+  
+ 
+  }
+  .Body {
+      text-align: center;
+      background: black;
+      color: white;
+      font-family: Georgia, sans-serif;
+  }
+  .inputButton {
+    color: Black;
+    font-family: Georgia, sans-serif;
+  }
