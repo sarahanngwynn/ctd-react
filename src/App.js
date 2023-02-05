@@ -20,37 +20,6 @@ function App() {
             </div>
           }
         />
-         <Route
-          path="/"
-          element={
-            <div>
-              <h1>Personal</h1>
-            </div>
-          }
-        />
-    
-       
-           <Route
-          path="/Work"
-          element={
-            <div>
-              <h1>Work</h1>
-            </div>
-          }
-          />
-         
-        
-           <Route
-          path="/Goals"
-          element={
-            <div>
-              <h1>Goals</h1>
-            </div>
-          }
-          />
-        
-  
-        
         <Route
           path="/new"
           element={
