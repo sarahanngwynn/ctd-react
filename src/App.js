@@ -3,6 +3,7 @@ import TodoList from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import style from "./App.module.css";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -65,6 +66,7 @@ function App() {
         {
           fields: {
             Title: todoItem.fields.Title,
+            
           },
         },
       ],
@@ -90,7 +92,7 @@ function App() {
           path="/"
           element={
             <div>
-              <h1>Todo List</h1>
+              <h1 className={style.Title}>Todo List</h1>
             </div>
           }
         />
