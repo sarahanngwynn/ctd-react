@@ -1,7 +1,11 @@
 import React from "react";
 import style from "./TodoListItem.module.css";
+import PropTypes from "prop-types";
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
+  TodoListItem.propTypes = {
+    onAddTodo: PropTypes.func,
+};
   const handleRemoveTodo = (event) => {
     event.preventDefault();
        onRemoveTodo(todo.id);
