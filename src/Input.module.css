@@ -1,0 +1,14 @@
+.inputButton {
+     background: var(--branding-color);
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 5px 15px;
+  font-family: 'Itim', cursive;
+    font-size: 16px;
+  }
+
+  .inputButton:hover {
+    color: pink;
+  }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import style from "./TodoListItem.module.css";
+import style from "./Input.module.css";
 
 export default function InputWithLabel({ todoTitle, handleTitleChange, children}) {
         const inputRef = useRef();
@@ -13,6 +13,7 @@ export default function InputWithLabel({ todoTitle, handleTitleChange, children}
             htmlFor="todoTitle">
                 {children}
                 </label>
+                <span> </span>
             <input 
             className={style.input}
             value = {todoTitle} 
@@ -20,7 +21,7 @@ export default function InputWithLabel({ todoTitle, handleTitleChange, children}
             name="title" 
             id="todoTitle" 
             ref={inputRef}
-            ></input>
+            ></input><span> </span>
              <button className={style.inputButton} type="submit">Add</button>
         </div>
     )
