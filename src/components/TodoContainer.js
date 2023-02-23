@@ -10,7 +10,7 @@ function TodoContainer(props) {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`,
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`, // 
       {
         headers: {
           authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
