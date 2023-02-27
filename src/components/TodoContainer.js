@@ -12,16 +12,26 @@ function TodoContainer(props) {
     fetch(
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default/?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`, // 
       {
+        method: "GET",
         headers: {
           authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
         },
       }
     )
       .then((response) => response.json())
-      .then((result) => {
+      .then((data) => {
+       console.log(data.records);
+        data.records.sort(function(objectA, objectB) {
+      
+          if (objectA.fields.Name < objectB.fields.Name) return 1;
+          if (objectA.fields.Name > objectB.fields.Name) return -1;
+           return 0;
+        
+        })
+    
         setIsLoading(false);
-        console.log(result);
-        setTodoList(result.records);
+        console.log(data);
+        setTodoList(data.records || []);
       })
       .catch((error) => {
         setIsLoading(false);
