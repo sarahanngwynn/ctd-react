@@ -12,22 +12,24 @@ const App = () => {
 
     <BrowserRouter>
       <Routes>
-        <Route
+      <Route
           exact
           path="/"
           element={
             <div>
-              <h1 className={style.Title}>Todo List</h1>
-              <TodoContainer tableName=""/>
+              <h1 className={style.Title}>Welcome to your TodoList</h1>
+             <a href="/new"> <button className={style.Button}> Begin Your List</button></a>
             </div>
           }
         />
+        
         <Route
           path="/new"
           element={
             <div>
               <h1>New TodoList</h1>
               <TodoContainer tableName=""/>
+              <a href="/"><button className={style.Button}>Return to Homepage</button></a>
             </div>
           }
         />
